@@ -7,9 +7,10 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
 
+// this is for chrome and ie
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
+    document.body.style.zoom = "150%"
 } else {
-    // this is for chrome and ie
     document.body.style.zoom = "300%"
 }
