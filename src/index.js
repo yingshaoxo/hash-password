@@ -12,5 +12,5 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
     document.body.style.zoom = "150%"
 } else {
-    document.body.style.zoom = "300%"
+    document.body.style.zoom = "240%"
 }
