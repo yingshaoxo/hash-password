@@ -2,6 +2,7 @@
   "name": "hash-passwd",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
     "informed": "^1.10.4",
