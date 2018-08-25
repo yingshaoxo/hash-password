@@ -5,6 +5,7 @@ clear() {
 	sudo rm -fr __pycache__
     sudo rm yarn-error.log
     sudo rm yarn.lock
+    sudo rm package-lock.json
 }
 
 pull() {
