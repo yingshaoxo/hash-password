@@ -30,9 +30,9 @@ class App extends Component {
           {({ formState }) => (
             <div>
               <p className="App-intro">
-                  <TextArea field="private_key" id="private_key" placeholder="private key" rows="1" cols="25" wrap="hard"></TextArea>
+                  <TextArea field="private_key" id="private_key" placeholder="private key" rows="1" cols="25"/>
                   <br/>
-                  <TextArea field="public_key" id="public_key" placeholder="public key" rows="1" cols="25" wrap="hard"/>
+                  <TextArea field="public_key" id="public_key" placeholder="public key" rows="1" cols="25"/>
               </p>
 
               <p className="App-intro">
