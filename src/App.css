@@ -47,3 +47,9 @@
     color: #808080;
     text-align: center;
 }
+
+
+textarea {
+  resize: none;
+  #text-align: center;
+}
