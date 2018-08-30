@@ -1,6 +1,11 @@
+move() {
+    yarn build
+    mv build/* -f ..
+}
+
 clear() {
 	sudo rm -fr dist
-	#sudo rm -fr build
+	sudo rm -fr build
 	sudo rm -fr nohup.out
 	sudo rm -fr __pycache__
     sudo rm yarn-error.log
@@ -9,12 +14,15 @@ clear() {
 }
 
 pull() {
+    cd ..
 	git fetch --all
 	git reset --hard origin/master
 }
 
 push() {
+    move
 	clear
+    cd ..
 	git config --global user.email "yingshaoxo@gmail.com"
 	git config --global user.name "yingshaoxo"
 	git add .
@@ -31,6 +39,9 @@ elif [ "$1" == "pull" ]; then
 
 elif [ "$1" == "push" ]; then
     push
+
+elif [ "$1" == "move" ]; then
+    move 
 
 elif [ "$1" == "" ]; then
     echo "
