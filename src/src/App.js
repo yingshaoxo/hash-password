@@ -5,16 +5,21 @@ import './App.css';
 import {Form, TextArea} from 'informed';
 
 var Crypto = require('crypto-js')
-function get_passwd(string, length=12) {
-    var result = Crypto.SHA512(Crypto.enc.Utf8.parse(string)).toString()
+function get_passwd(private_key, public_key, length=12) {
+    if (private_key == undefined) {
+        private_key = ''
+    }
+    if (public_key == undefined) {
+        public_key = ''
+    }
+    const string = private_key + public_key
+    let result = Crypto.SHA512(Crypto.enc.Utf8.parse(string)).toString()
     result = result.slice(0, length-1)
     result = 'A' + result
-
-    if ((result === "A441dfabd012") || (result === "Acf83e1357ee")) {
-        return ""
-    } else {
-        return result
+    if (result == 'Acf83e1357ee') {
+        return ''
     }
+    return result
 }
 
 class App extends Component {
@@ -36,7 +41,7 @@ class App extends Component {
               </p>
 
               <p className="App-intro">
-                  {get_passwd(formState.values.private_key + formState.values.public_key)}
+                  {get_passwd(formState.values.private_key, formState.values.public_key)}
               </p>
             </div>
           )}

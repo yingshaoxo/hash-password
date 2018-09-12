@@ -1,5 +1,6 @@
 move() {
     yarn build
+    rm ../static -fr
     mv build/* -f ..
 }
 
@@ -48,6 +49,7 @@ elif [ "$1" == "" ]; then
 clear
 pull
 push
+move
 "
 
 fi
