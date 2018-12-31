@@ -4,6 +4,8 @@ import './App.css';
 
 import {Form, TextArea} from 'informed';
 
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 var Crypto = require('crypto-js')
 function get_passwd(private_key, public_key, length=12) {
     if (private_key == undefined) {
@@ -40,9 +42,16 @@ class App extends Component {
                   <TextArea field="public_key" id="public_key" placeholder="public key" rows="1" cols="25"/>
               </p>
 
-              <p className="App-intro">
-                  {get_passwd(formState.values.private_key, formState.values.public_key)}
-              </p>
+              <CopyToClipboard 
+                text={get_passwd(formState.values.private_key, formState.values.public_key)}
+                onCopy={() => {
+                  alert("Password Copyed");
+                }}
+              >
+                <p className="App-intro">
+                    {get_passwd(formState.values.private_key, formState.values.public_key)}
+                </p>
+              </CopyToClipboard>
             </div>
           )}
         </Form>
